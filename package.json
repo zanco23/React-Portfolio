@@ -1,38 +1,39 @@
 {
-  "name": "nucampsites",
-  "version": "1.0.0",
-  "description": "This is a website for the fictional campsites review site NuCamp.",
-  "main": "index.html",
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
-    "imagemin": "imagemin img/* -o dist/img",
-    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-    "scss": "node-sass -o css/ css/",
-    "lite": "lite-server",
-    "start": "npm run watch:all",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
-    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
-    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html"
-  },
-  "author": "Zachary Wile",
-  "license": "ISC",
-  "devDependencies": {
-    "copyfiles": "^2.0.0",
-    "imagemin-cli": "^3.0.0",
-    "lite-server": "^2.3.0",
-    "node-sass": "^4.13.1",
-    "onchange": "^3.3.0",
-    "parallelshell": "^3.0.1",
-    "rimraf": "^2.6.2",
-    "usemin-cli": "^0.6.0"
-  },
+  "name": "nucampsite",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "bootstrap": "^4.4.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.12.9"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "3.4.1",
+    "redux": "^3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
